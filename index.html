@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>パスワード生成</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/FusaFusaRogo.PNG" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+  <!-- ここからheader -->
+  <header>
+    <h1><img src="img/FusaFusaRogo.PNG" alt="ページロゴ" width="48" height="48"></h1>
+    <h2>パスワード生成</h2>
+  </header>
+
+  <!-- ここからmain -->
+  <main>
+    <div>
+      <span class="material-symbols-outlined refresh" id="refresh">refresh</span>
+      <p id="password">パスワード生成ゾーン</p>
+      <span class="material-symbols-outlined content-copy" id="content-copy">content_copy</span>
+    </div>
+    
+
+    <h3>設定項目</h3>
+    <section>
+      <p>パスワードの文字数</p>
+      <div class="password-length-edit">
+        <input type="range" min="4" max="16" value="8" id="password-length">
+        <p class="password-length" id="password-length-display">n文字</p>
+      </div>
+    </section>
+    <section>
+      <p>パスワードに大文字を含める</p>
+      <input type="checkbox" id="use-capital">
+    </section>
+    <section>
+      <p>パスワードに記号を含める</p>
+      <input type="checkbox" id="use-symbol">
+      <input type="text" placeholder="使用する記号" disabled id="using-symbol">
+    </section>
+
+  </main>
+
+  <!-- ここからfooter -->
+  <footer>
+    <p><small><span class="copy-right">®</span>Fusafusa Factory</small></p>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+
+</html>
