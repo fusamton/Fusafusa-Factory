@@ -49,6 +49,7 @@ header > h1 {
   top: 0;
   left: 0;
   background: yellow;
+  border-radius: 50%;
 }
 
 header > h2 {

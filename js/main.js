@@ -7,15 +7,18 @@
   const contentCopy = document.querySelector('#content-copy');
   const passwordLength = document.querySelector('#password-length');
   const passwordLengthDisplay = document.querySelector('#password-length-display');
+  const useNumber = document.querySelector('#use-number');
   const useCapital = document.querySelector('#use-capital');
   const useSymbol = document.querySelector('#use-symbol');
   const usingSymbol = document.querySelector('#using-symbol');
 
   // グローバル変数管理エリア
   const wordList = 'abcdefghijklmnopqrstuvwxyz';
+  const numberList = '1234567890';
   let usingWord = '';
+  let usingNumberWord = '';
   let usingCapitalWord = '';
-  let usingSymbolList = '';
+  let usingSymbolWord = '';
   let creatingPassword = '';
 
   // 検証エリア
@@ -24,7 +27,7 @@
   // パスワード生成エリア
   function generatPassword() {
     creatingPassword = '';
-    usingWord = wordList + usingCapitalWord + usingSymbolList;
+    usingWord = wordList + usingCapitalWord + usingSymbolWord + usingNumberWord;
     for (let i = 0; i < passwordLength.value; i++) {
       const randomNumber = Math.floor(Math.random() * usingWord.length);
       creatingPassword += usingWord[randomNumber];
@@ -41,13 +44,13 @@
           }
         }
       }
-    console.log(lowerCaseCount);
+    console.log(`小文字${lowerCaseCount}`);
     return lowerCaseCount;
   }
 
   refresh.addEventListener('click', () => {
     generatPassword();
-    while (capitalCheck() === 0 || symbolCheck() === 0 || lowerCaseCheck() === 0) {
+    while (capitalCheck() === 0 || symbolCheck() === 0 || lowerCaseCheck() === 0 || numberCheck() === 0) {
       generatPassword();
     }
   });
@@ -64,6 +67,32 @@
     passwordLengthDisplay.textContent = passwordLength.value + '文字';
   });
 
+  // 数字使用エリア
+  function numberCheck() {
+    let numberCount = 0;
+    if (useNumber.checked) {
+      for (let i = 0; i < passwordLength.value; i++) {
+        for (let j = 0; j < 10; j++) {
+          if (creatingPassword[i] === usingNumberWord[j]) {
+            numberCount++;
+          }
+        }
+      }
+    } else {
+      numberCount--;
+    }
+    console.log(`数字${numberCount}`);
+    return numberCount;
+  }
+
+  useNumber.addEventListener('change', () => {
+    if (useNumber.checked) {
+      usingNumberWord = numberList;
+    } else {
+      usingCapitalWord = '';
+    }
+  });
+
   // 大文字使用エリア
   function capitalCheck() {
     let capitalCount = 0;
@@ -76,9 +105,9 @@
         }
       }
     } else {
-      capitalCount++;
+      capitalCount--;
     }
-    console.log(capitalCount);
+    console.log(`大文字${capitalCount}`);
     return capitalCount;
   }
 
@@ -95,16 +124,16 @@
     let symbolCount = 0;
     if (useSymbol.checked) {
       for (let i = 0; i < passwordLength.value; i++) {
-        for (let j = 0; j < usingSymbolList.length; j++) {
-          if (creatingPassword[i] === usingSymbolList[j]) {
+        for (let j = 0; j < usingSymbolWord.length; j++) {
+          if (creatingPassword[i] === usingSymbolWord[j]) {
             symbolCount++;
           }
         }
       }
     } else {
-      symbolCount++;
+      symbolCount--;
     }
-    console.log(symbolCount);
+    console.log(`記号${symbolCount}`);
     return symbolCount;
   }
 
@@ -122,8 +151,8 @@
 
   // 使用記号管理エリア
   usingSymbol.addEventListener('input', () => {
-    usingSymbolList = usingSymbol.value;
-    console.log(usingSymbolList);
+    usingSymbolWord = usingSymbol.value;
+    console.log(usingSymbolWord);
   });
 
 }
