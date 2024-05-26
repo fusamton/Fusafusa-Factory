@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-16">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>文字列データ化</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="img/FusaFusaRogo.PNG" type="image/x-icon">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+  <!-- ここからheader -->
+  <header>
+    <h1><img src="img/FusaFusaRogo.PNG" alt="ページロゴ" width="48" height="48"></h1>
+    <h2>文字 二進数 相互変換</h2>
+  </header>
+
+  <!-- ここからmain -->
+  <main>
+    <div class="utf16-to-binaly">
+      <input type="text" id="org-utf16">
+      <button id="utf16-to-binaly">二進数へ変換</button>
+      <div class="binaly-output-container">
+        <!-- <span class="material-symbols-outlined refresh" id="refresh">refresh</span> -->
+        <p id="result-binaly">2 　 D 　 d 　 a 　 t 　 a 　 生 　 成 　 ゾ 　 ー 　 ン</p>
+        <span class="material-symbols-outlined content-copy" id="content-copy">content_copy</span>
+      </div>
+    </div>
+
+    <div class="binaly-to-utf16">
+      <input type="text" id="org-binaly">
+      <button id="binaly-to-utf16">utf-16へ変換</button>
+      <p id="result-utf16">ここに出力</p>
+    </div>
+  </main>
+
+  <!-- ここからfooter -->
+  <footer>
+    <p><small><span class="copy-right">®</span>Fusafusa Factory</small></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
+

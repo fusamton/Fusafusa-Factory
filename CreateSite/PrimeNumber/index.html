@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>ふさふさPortal</title>
+  <title>素数探し</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="img/FusaFusaRogo.PNG" type="image/x-icon">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -15,20 +15,27 @@
   <!-- ここからheader -->
   <header>
     <h1><img src="img/FusaFusaRogo.PNG" alt="ページロゴ" width="48" height="48"></h1>
-    <h2>各種リンク</h2>
+    <h2>素数探し</h2>
   </header>
 
   <!-- ここからmain -->
   <main>
-    <h3>種別1</h3>
-    <ol>
-      <li><a href="../CreateSite/OriginalPassWordGenerator/index.html" target="_blank">パスワード生成</a></li>
-    </ol>
-    <h3>種別2</h3>
-    <ol>
-      <li><a href="../CreateSite/PrimeNumber/index.html" target="_blank">素数生成</a></li>
-      <li><a href="../CreateSite/UTF-8toBinaly/index.html" target="_blank">文書データ化</a></li>
-    </ol>
+    <div class="prime-numbers">
+      <h3>素数をn個出力する</h3>
+      <input type="number" id="prime-number-quantity">
+      <p id="prime-numbers-output">ここに出力</p>
+      <button id="generate-button">素数を出力</button>
+    </div>
+    
+    <div class="random-prime-number">
+      <h3>ランダムな素数を出力する</h3>
+      <div class="range-container">
+        <input type="range" id="prime-number-size" min="2" max="10" value="1">
+        <label id="range-value">X桁</label>
+      </div>
+      <p id="random-prime-number-output">ここに出力</p>
+      <button id="generate-button-2">素数を出力</button>
+    </div>
   </main>
 
   <!-- ここからfooter -->

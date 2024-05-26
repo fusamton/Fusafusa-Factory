@@ -79,7 +79,7 @@ main>div>h3 {
 main>div>input {
   display: block;
   margin: 8px auto;
-  width: 64px;
+  width: 256px;
 }
 
 main>div>p {
@@ -97,6 +97,31 @@ main>div>button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+main > div > div.binaly-output-container {
+  display: flex;
+  justify-content: center;
+  padding: 16px 8px;
+  border: 1.5px solid seagreen;
+  border-radius: 4px;
+  position: relative;
+}
+
+main > div > div.binaly-output-container > p#result-binaly {
+  letter-spacing: -0.27em;
+  line-height: .72em;
+  font-size: 24px;
+}
+
+main > div > div.binaly-output-container > span.content-copy {
+  cursor: pointer;
+  position: absolute;
+  right: 8px;
+}
+
+main > div > div.binaly-output-container > span.content-copy:hover {
+  opacity: .5;
 }
 
 /* ここからfooter */

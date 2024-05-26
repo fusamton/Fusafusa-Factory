@@ -82,6 +82,26 @@ main>div>input {
   width: 64px;
 }
 
+main>div>.range-container {
+
+}
+
+main>div>div>#prime-number-size {
+  width: 200px;
+  margin-left: calc((100% - 200px) / 2);
+}
+
+main>div>div>#range-value {
+  vertical-align: 2px;
+  margin-left: 8px;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 main>div>p {
   margin: 8px auto;
   box-sizing: border-box;
